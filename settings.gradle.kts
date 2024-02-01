@@ -18,5 +18,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "EditProjectNameHere"
+rootProject.name = "kotestTraining"
 include("app")
