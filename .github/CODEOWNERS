@@ -1,0 +1,13 @@
+# documentation about CODEOWNERS : https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#codeowners-and-branch-protection
+# This is a comment.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo.
+* @AnouarDoukkali
+
+# Order is important; the last matching pattern takes the most precedence.
+# So if a pull request only modifies Kotlin files, only these owners
+# will be requested for a review.
+*.kt @AnouarDoukkali
+
+# You can also use email addresses if you prefer.

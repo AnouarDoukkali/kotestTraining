@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#------------------------ lock the main branch ------------------------
+# Get the current branch name
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+# Check if the current branch is main
+if [ "$current_branch" = "main" ]; then
+  lock_main=true # This should be replaced with the actual check for lock_main
+
+  # If lock_main is true, fail the commit
+  if [ "$lock_main" = true ] ; then
+    echo "Commit failed: main branch is locked in .git pre-commit hook file "
+    exit 1
+  fi
+fi

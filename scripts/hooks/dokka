@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#------------------------ Check for @version in modified files ------------------------
+# Extract the version number from build.gradle.kts
+VERSION=$(grep -Eo 'version\s*=\s*"[^"]+"' build.gradle.kts | sed -E 's/version\s*=\s*"([^"]+)"/\1/')
+
+# Find all modified .kt files
+MODIFIED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.kt$')
+
+# Check if the version number was found
+if [ -z "$VERSION" ]; then
+  # If version number was not found, check if any modified file contains @version
+  for file in $MODIFIED_FILES; do
+    if grep -q "@version" "$file"; then
+      echo "Error: @version found in $file but unable to extract version from build.gradle.kts."
+      exit 1
+    fi
+  done
+else
+  # If version number was found, replace @version with the extracted version in all modified files
+  for file in $MODIFIED_FILES; do
+    sed -i "s/@version/${VERSION}/g" "$file"
+    git add "$file"
+  done
+fi

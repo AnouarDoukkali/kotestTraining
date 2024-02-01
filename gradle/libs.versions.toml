@@ -1,0 +1,37 @@
+[versions]
+kotlin = "1.9.22"
+javaVersion = "21"
+detekt = "1.23.5"
+toolchainsResolver = "0.8.0"
+kotest = "5.8.0"
+kotlin-logging = "6.0.3"
+slf4j = "2.0.11"
+dokka = "1.9.10"
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+toolchainsResolver = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "toolchainsResolver" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+[libraries]
+#kotlin
+kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+#dokka
+dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+#detekt
+detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-Formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+detekt-rulesLib = { module = "io.gitlab.arturbosch.detekt:detekt-rules-libraries", version.ref = "detekt" }
+detekt-rulesAuthor = { module = "io.gitlab.arturbosch.detekt:detekt-rules-ruleauthors", version.ref = "detekt" }
+#kotest
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertion = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+kotest-properties = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+#logging
+logging-kotlin = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+logging-slf4j = { module = "org.slf4j:slf4j-log4j12", version.ref = "slf4j" }
+#toolchainResolver
+toolchainsResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "toolchainsResolver" }
+[bundles]
+logging = ["logging-kotlin", "logging-slf4j"]
+kotest = ["kotest-runner", "kotest-assertion", "kotest-properties"]
+detekt = ["detekt-Formatting", "detekt-rulesLib", "detekt-rulesAuthor"]

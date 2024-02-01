@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source .git/hooks/lock-main-branch
+source .git/hooks/detekt
+source .git/hooks/dokka
