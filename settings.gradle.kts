@@ -17,6 +17,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "EditProjectNameHere"
+rootProject.name = "kotestTraining"
 include("app")
