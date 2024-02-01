@@ -17,6 +17,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
 rootProject.name = "kotestTraining"
 include("app")
