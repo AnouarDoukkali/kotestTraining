@@ -2,16 +2,16 @@
 kotlin = "1.9.22"
 javaVersion = "21"
 detekt = "1.23.5"
-toolchainsResolver = "0.8.0"
 kotest = "5.8.0"
 kotlin-logging = "6.0.3"
 slf4j = "2.0.11"
 dokka = "1.9.10"
+
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-toolchainsResolver = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "toolchainsResolver" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+
 [libraries]
 #kotlin
 kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -29,8 +29,7 @@ kotest-properties = { module = "io.kotest:kotest-property", version.ref = "kotes
 #logging
 logging-kotlin = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
 logging-slf4j = { module = "org.slf4j:slf4j-log4j12", version.ref = "slf4j" }
-#toolchainResolver
-toolchainsResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "toolchainsResolver" }
+
 [bundles]
 logging = ["logging-kotlin", "logging-slf4j"]
 kotest = ["kotest-runner", "kotest-assertion", "kotest-properties"]
