@@ -59,7 +59,7 @@ internal class DynamicTest : FunSpec({
 })
 
 /**
- * Lifecycle Callbacks can be reused across multiple test classes
+ * Lifecycle Callbacks
  */
 internal class ReusableCallbacks : FunSpec({
 
@@ -70,10 +70,10 @@ internal class ReusableCallbacks : FunSpec({
         println("Before the whole spec")
     }
 
-    test("test 1") {
+    test("ReusableCallbacks test 1") {
         1 + 9 shouldBe 10
     }
-    test("test 2") {
-        5 + 7
+    test("ReusableCallbacks test 2") {
+        5 + 7 shouldBe 12
     }
 })
