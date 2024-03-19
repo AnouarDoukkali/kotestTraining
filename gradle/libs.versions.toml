@@ -2,7 +2,7 @@
 kotlin = "1.9.23"
 javaVersion = "21"
 detekt = "1.23.5"
-kotest = "5.8.0"
+kotest = "5.8.1"
 kotlin-logging = "6.0.3"
 slf4j = "2.0.12"
 dokka = "1.9.20"
