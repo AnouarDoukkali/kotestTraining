@@ -41,4 +41,17 @@ internal class DataDrivenTesting : FunSpec({
             isSumPositive(a, b) shouldBe true
         }
     }
+    /**
+     * Testing with custom name by using the nameFn parameter
+     */
+    context("testing with custom name") {
+        withData(
+            nameFn = { "${it.a} and ${it.b}" },
+            Numbers(7, 1),
+            Numbers(5, 6),
+            Numbers(8, 4),
+        ) { (a, b) ->
+            isSumPositive(a, b) shouldBe true
+        }
+    }
 })
