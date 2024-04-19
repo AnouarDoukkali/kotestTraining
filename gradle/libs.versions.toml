@@ -26,11 +26,12 @@ detekt-rulesAuthor = { module = "io.gitlab.arturbosch.detekt:detekt-rules-ruleau
 kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotest-assertion = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 kotest-properties = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+kotest-dataset = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
 #logging
 logging-kotlin = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
 logging-slf4j = { module = "org.slf4j:slf4j-log4j12", version.ref = "slf4j" }
 
 [bundles]
 logging = ["logging-kotlin", "logging-slf4j"]
-kotest = ["kotest-runner", "kotest-assertion", "kotest-properties"]
+kotest = ["kotest-runner", "kotest-assertion", "kotest-properties", "kotest-dataset"]
 detekt = ["detekt-Formatting", "detekt-rulesLib", "detekt-rulesAuthor"]
