@@ -23,6 +23,7 @@ internal class KotestConvention : Plugin<Project> {
             }
             tasks.withType<Test>().configureEach {
                 useJUnitPlatform()
+                systemProperties = System.getProperties().asIterable().associate { it.key.toString() to it.value }
             }
         }
     }
