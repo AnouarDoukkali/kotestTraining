@@ -14,6 +14,9 @@ internal object KotestConfig : AbstractProjectConfig() {
     override val parallelism: Int = 3
     override val assertionMode: AssertionMode = AssertionMode.Error
     override val testNameAppendTags: Boolean = true
+
     // override val isolationMode = IsolationMode.InstancePerLeaf
     // override val specExecutionOrder = SpecExecutionOrder.Annotated
+    override val failOnIgnoredTests: Boolean = true
+    override val failOnEmptyTestSuite: Boolean = true
 }
